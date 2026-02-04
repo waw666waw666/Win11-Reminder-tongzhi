@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.log
+
+# VS Code
+.vscode/
+
+# Project specific
+config.json
+*.exe
+dist/
+build/
+*.spec
+*.lnk

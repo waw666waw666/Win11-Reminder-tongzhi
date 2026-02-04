@@ -1,0 +1,6 @@
+customtkinter
+Pillow
+pystray
+win11toast
+winshell
+pywin32
