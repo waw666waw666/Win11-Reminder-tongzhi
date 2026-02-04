@@ -15,9 +15,17 @@
 
 ## 📸 界面预览
 
-| 主界面 | 设置界面 | 通知预览 |
-| :---: | :---: | :---: |
-| <img src="assets/preview.png" width="100%"> | <img src="assets/preview_2.png" width="100%"> | <img src="assets/preview_3.png" width="100%"> |
+<p align="center">
+  <img src="assets/preview.png" alt="主界面" width="80%" />
+</p>
+
+<p align="center">
+  <img src="assets/preview_2.png" alt="设置界面" width="80%" />
+</p>
+
+<p align="center">
+  <img src="assets/preview_3.png" alt="通知效果" width="80%" />
+</p>
 
 ## ✨ 功能特性
 
