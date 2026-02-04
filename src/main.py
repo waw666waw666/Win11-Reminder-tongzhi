@@ -43,10 +43,27 @@ COLORS = {
 FONT_NAME = "Microsoft YaHei UI"
 
 APP_NAME = "提醒管家"
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+# 确定基础路径
+if getattr(sys, 'frozen', False):
+    # 如果是打包后的 exe，配置文件保存在 exe 同级目录
+    BASE_DIR = os.path.dirname(sys.executable)
+else:
+    # 如果是源码运行，配置文件保存在当前脚本同级目录
+    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
 CONFIG_FILE = os.path.join(BASE_DIR, "config.json")
 LOG_FILE = os.path.join(BASE_DIR, "error.log")
-ICON_FILE = os.path.join(BASE_DIR, "app_icon.ico")
+# 注意：打包后 icon 仍然在临时目录中（资源文件），所以 icon 的路径逻辑可能需要单独处理
+# 这里我们假设 icon 是作为资源打包进去的，或者用户在目录下放了 icon
+# 为了兼容性，我们优先从资源目录找 icon，找不到再从 BASE_DIR 找
+if getattr(sys, 'frozen', False):
+    # PyInstaller 临时资源目录
+    RESOURCE_DIR = sys._MEIPASS
+else:
+    RESOURCE_DIR = BASE_DIR
+
+ICON_FILE = os.path.join(RESOURCE_DIR, "app_icon.ico")
 
 def create_app_icon():
     """生成应用图标文件"""
